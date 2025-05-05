@@ -1,6 +1,10 @@
 package com.Assignments;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 
 import com.WebDriverDemos.BaseFunction;
 
@@ -21,83 +25,104 @@ public class AS_13 extends BaseFunction {
 		launchBrowser("Chrome");
 		launchURL(url);
 
-		Thread.sleep(1000);
+//		RedBus.com
+        // b. Enter "Kolh" in FROM input and select 1st suggestion
+//        WebElement fromInput = driver.findElement(By.id("src"));
+//        fromInput.click();
+//        fromInput.sendKeys("Kolh");
+//        Thread.sleep(5000); // Wait for suggestions to load
 //
-		driver.findElement(By.cssSelector("[class*='srcDest']")).click();
-
-		Thread.sleep(1000);
-		
-
-		driver.findElement(By.cssSelector(".inputWrapper___6e522f")).sendKeys("Visa"); 
-//		driver.findElement(By.cssSelector(".sc-bxivhb.dsDRlf")).sendKeys("visa");
-		
-		
-		Thread.sleep(3000);
-
-//		driver.findElement(By.className("sc-gZMcBi hviMLb")).click();
-		driver.findElement(By.xpath("//ul[@class='autoFill']/li[1]")).click();
-		
-
-		Thread.sleep(3000);
-
-//		driver.findElement(By.xpath("(//div[@class='label___7cec60 '])[2]")).click();
-
-		driver.findElement(By.className("inputWrapper___6e522f")).sendKeys("Hyd");
-
-		Thread.sleep(3000);
-
-		driver.findElement(By.xpath("//ul[@class='autoFill']/li[1]")).click();
-
-		Thread.sleep(3000);
-
-		driver.findElement(By.className("doj___7d7da6")).click();
-
-		driver.findElement(By.xpath("//*[contains(@text,'31')]")).click();
-
-		Thread.sleep(2000);
-
-		driver.findElement(By.className("primaryButton___d6c460 searchButtonWrapper___ef701a")).click();
-
-		Thread.sleep(3000);
-
-		String text = driver.findElement(By.xpath("(//*[@class='rtcName___a725bd'])[1]")).getText();
-
-		System.out.println("name of 1st Bus from the list " + text);
-
-//        driver.findElement(By.xpath("//ul[@class='autoFill']/li[1]")).click();
-//
-//        // Enter To city (Bangalore -> Ban)
-//        driver.findElement(By.id("dest")).sendKeys("Ban");
-//        Thread.sleep(2000);
-//        driver.findElement(By.xpath("//ul[@class='autoFill']/li[1]")).click();
-//
-//        // Click on calendar icon
-//        driver.findElement(By.id("onward_cal")).click();
+//        
+//        driver.findElement(By.xpath("//ul[@class='sc-dnqmqq dZhbJF']/li[1]")).click();
+//        
 //        Thread.sleep(1000);
 //
-//        // Click on Date 31 (Make sure it exists in current month)
-//        try {
-//            driver.findElement(By.xpath("//td[text()='31']")).click();
-//        } catch (Exception e) {
-//            System.out.println("Date 31 not available in the current month.");
+//        // c. Enter "Ban" in TO input and select 1st suggestion
+//        WebElement toInput = driver.findElement(By.id("dest"));
+//        toInput.click();
+//        toInput.sendKeys("Ban");
+//        Thread.sleep(5000); // Wait for suggestions to load
+//        driver.findElement(By.xpath("//ul[@class='sc-dnqmqq dZhbJF']/li[1]")).click();
+//
+//
+//        // d. Click on calendar icon
+//        WebElement dateInput = driver.findElement(By.id("onwardCal"));
+//        dateInput.click();
+//        Thread.sleep(1000);
+//
+//        // e. Click on date 31 (first match from calendar)
+//        List<WebElement> dateList = driver.findElements(By.xpath("//span[text()='31']"));
+//        if (!dateList.isEmpty()) {
+//            dateList.get(0).click();
+//        } else {
+//            System.out.println("Date 31 not available.");
 //            driver.quit();
 //            return;
 //        }
 //
-//        // Click on Search Buses button
-//        driver.findElement(By.id("search_btn")).click();
-//        Thread.sleep(5000);
+//        // f. Click Search Buses button
+//        WebElement searchButton = driver.findElement(By.id("search_button"));
+//        searchButton.click();
 //
-//        // Display the name of the 1st bus
-//        try {
-//            String text = driver.findElement(By.xpath("(//div[@class='travels lh-24 f-bold d-color'])[1]")).getText();
-//            System.out.println("Name of 1st Bus from the list: " + text);
-//        } catch (Exception e) {
-//            System.out.println("Unable to fetch first bus name. It may not have loaded yet.");
+//        // g. Wait for search results and extract first bus name
+//        Thread.sleep(6000);
+//        List<WebElement> busList = driver.findElements(By.xpath("(//div[@class='travels lh-24 f-bold d-color'])[1]"));
+//        if (!busList.isEmpty()) {
+//            System.out.println("First Bus Name: " + busList.get(0).getText());
+//        } else {
+//            System.out.println("No buses found.");
 //        }
 
-	}
-	
-	
+		
+		
 
+		
+        // b. Enter "Kolh" in FROM input and select 1st suggestion
+		driver.findElement(By.cssSelector("div[class='label___201428 ']")).click();
+        WebElement fromInput = driver.findElement(By.cssSelector("(//div[contains(text(),'From')]"));
+//        fromInput.click();
+        fromInput.sendKeys("Kolh");
+        Thread.sleep(2000); // Wait for suggestions to load
+        fromInput.sendKeys(Keys.DOWN);
+        fromInput.sendKeys(Keys.ENTER);
+
+        // c. Enter "Ban" in TO input and select 1st suggestion
+        WebElement toInput = driver.findElement(By.xpath("//input[@placeholder='To']"));
+        toInput.click();
+        toInput.sendKeys("Ban");
+        Thread.sleep(2000); // Wait for suggestions to load
+        toInput.sendKeys(Keys.DOWN);
+        toInput.sendKeys(Keys.ENTER);
+
+        // d. Click on calendar icon
+        WebElement dateInput = driver.findElement(By.xpath("//div[contains(@class,'DatePicker')]/input"));
+        dateInput.click();
+        Thread.sleep(1000);
+
+        // e. Click on date 31 (first match from calendar)
+        List<WebElement> dateList = driver.findElements(By.xpath("//span[text()='31']"));
+        if (!dateList.isEmpty()) {
+            dateList.get(0).click();
+        } else {
+            System.out.println("Date 31 not available.");
+            driver.quit();
+            return;
+        }
+
+        // f. Click Search Buses button
+        WebElement searchButton = driver.findElement(By.xpath("//button[text()='Search Buses']"));
+        searchButton.click();
+
+        // g. Wait for search results and extract first bus name
+        Thread.sleep(6000);
+        List<WebElement> busList = driver.findElements(By.xpath("//div[@class='travels lh-24 f-bold d-color']"));
+        if (!busList.isEmpty()) {
+            System.out.println("First Bus Name: " + busList.get(0).getText());
+        } else {
+            System.out.println("No buses found.");
+        }
+
+        // Close browser
+        driver.quit();
+    }
 }
