@@ -1,4 +1,4 @@
-package com.WebDriverDemos;
+package com.Locators;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;

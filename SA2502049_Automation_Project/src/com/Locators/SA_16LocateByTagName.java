@@ -1,4 +1,4 @@
-package com.WebDriverDemos;
+package com.Locators;
 
 import java.util.List;
 
