@@ -5,36 +5,32 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.WebDriverDemos.BaseFunction;
 
-public class AS_13 extends BaseFunction {
+public class AS_14 extends BaseFunction {
 
-	public static void main(String[] args) throws InterruptedException {
-//		13.	Open https://www.redbus.in/ 
-//			a.	 In From Enter first 4 characters of your city (Kolhapur -> Kolh)
-//			b.	Select 1st Option from the list displayed
-//			c.	In To Enter first 4 characters of your city (Banglore -> Ban)
-//			d.	Select 1st Option from the list displayed
-//			e.	Click on Calendar icon
-//			f.	Click on Date 31
-//			g.	Click on Search Buses button
-//			h.	Display the name of 1st Bus from the list 
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 		String url = "https://www.redbus.in/";
 		launchBrowser("Chrome");
 		launchURL(url);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 		WebElement fromInput = driver.findElement(By.id("src"));
 		fromInput.click();
 		fromInput.sendKeys("Kolh");
-
-		driver.findElement(By.xpath("//ul[@class='sc-dnqmqq dZhbJF']/li[1]")).click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//ul[@class='sc-dnqmqq dZhbJF']/li[1]")))
+				.click();
 
 		WebElement toInput = driver.findElement(By.id("dest"));
 		toInput.click();
 		toInput.sendKeys("Ban");
-		driver.findElement(By.xpath("//ul[@class='sc-dnqmqq dZhbJF']/li[1]")).click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//ul[@class='sc-dnqmqq dZhbJF']/li[1]")))
+				.click();
 
 		WebElement dateInput = driver.findElement(By.id("onwardCal"));
 		dateInput.click();
@@ -50,8 +46,9 @@ public class AS_13 extends BaseFunction {
 
 		WebElement searchButton = driver.findElement(By.id("search_button"));
 		searchButton.click();
+		List<WebElement> busList = wait.until(ExpectedConditions
+				.presenceOfAllElementsLocatedBy(By.xpath("(//div[@class='travels lh-24 f-bold d-color'])[1]")));
 
-		List<WebElement> busList = driver.findElements(By.xpath("(//div[@class='travels lh-24 f-bold d-color'])[1]"));
 		if (!busList.isEmpty()) {
 			System.out.println("First Bus Name: " + busList.get(0).getText());
 		} else {
