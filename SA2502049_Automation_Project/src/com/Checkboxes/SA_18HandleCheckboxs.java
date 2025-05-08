@@ -1,7 +1,9 @@
-package com.WebDriverDemos;
+package com.Checkboxes;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
+import com.Locators.BaseFunction;
 
 public class SA_18HandleCheckboxs extends BaseFunction {
 
