@@ -5,7 +5,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import com.WebDriverDemos.BaseFunction;
+import com.TestBase.BaseFunction;
 
 public class AS_09 extends BaseFunction {
 
@@ -26,7 +26,7 @@ public class AS_09 extends BaseFunction {
 				radio.click();
 
 				if (radio.isSelected()) {
-					
+
 					String buttonName = radio.getAttribute("value");
 
 					System.out.println(buttonName);

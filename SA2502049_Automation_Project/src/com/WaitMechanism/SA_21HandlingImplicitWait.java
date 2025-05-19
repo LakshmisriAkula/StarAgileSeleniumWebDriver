@@ -4,7 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 
-import com.Locators.BaseFunction;
+import com.TestBase.BaseFunction;
 
 public class SA_21HandlingImplicitWait extends BaseFunction {
 
