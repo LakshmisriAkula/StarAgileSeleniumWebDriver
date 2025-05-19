@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 
-import com.Locators.BaseFunction;
+import com.TestBase.BaseFunction;
 
 public class SA_23HandlingFluentWait extends BaseFunction {
 
