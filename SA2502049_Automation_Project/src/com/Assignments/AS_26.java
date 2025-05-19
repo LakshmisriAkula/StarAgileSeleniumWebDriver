@@ -4,6 +4,8 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -31,12 +33,13 @@ public class AS_26 extends BaseFunction {
 //		p. Display the Employee ID
 //		q. Logout
 
-		String empUsername = "empuser" + System.currentTimeMillis();
-	    String empPassword = "Emp@12345";
+	String empUsername = "empuser" + System.currentTimeMillis();
+	String empPassword = "Emp@12345";
 
 	@Test(priority = 1)
 	public void addEmployeeAsAdmin() throws InterruptedException {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		// a. Login with Admin
 		driver.findElement(By.name("username")).sendKeys("Admin");
 		driver.findElement(By.name("password")).sendKeys("admin123");
@@ -44,10 +47,11 @@ public class AS_26 extends BaseFunction {
 
 		Thread.sleep(2000);
 		// b. Click on PIM
-		driver.findElement(By.xpath("//span[text()='PIM']")).click();
+		driver.findElement(By.xpath("(//li[@class='oxd-main-menu-item-wrapper'])[2]")).click();
 
 		// c. Click on + Add button
-		driver.findElement(By.xpath("//button[text()=' Add ']")).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//button[normalize-space()='Add']"))))
+				.click();
 
 		// d-f. Enter First, Middle, Last Name
 		driver.findElement(By.name("firstName")).sendKeys("John");
@@ -56,18 +60,16 @@ public class AS_26 extends BaseFunction {
 
 		Thread.sleep(1500);
 		// g. Click on Create Login Details
-		driver.findElement(By.xpath("//span[text()='Create Login Details']")).click();
+		driver.findElement(By.xpath("//span[@class='oxd-switch-input oxd-switch-input--active --label-right']"))
+				.click();
 
 		// h-j. Enter Username, Password, Confirm Password
-		driver.findElement(By.xpath("//label[text()='Username']/../following-sibling::div/input"))
-				.sendKeys(empUsername);
-		driver.findElement(By.xpath("//label[text()='Password']/../following-sibling::div/input"))
-				.sendKeys(empPassword);
-		driver.findElement(By.xpath("//label[text()='Confirm Password']/../following-sibling::div/input"))
-				.sendKeys(empPassword);
+		driver.findElement(By.xpath("(//input[@class='oxd-input oxd-input--active'])[3]")).sendKeys(empUsername);
+		driver.findElement(By.xpath("(//input[@type='password'])[1]")).sendKeys(empPassword);
+		driver.findElement(By.xpath("(//input[@type='password'])[2]")).sendKeys(empPassword);
 
 		// k. Click on Save
-		driver.findElement(By.xpath("//button[text()=' Save ']")).click();
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		Thread.sleep(3000); // wait for redirection
 
 		// l. Logout
@@ -77,6 +79,8 @@ public class AS_26 extends BaseFunction {
 
 	@Test(priority = 2)
 	public void loginWithNewEmployee() throws InterruptedException {
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
 		// m. Login using newly created credentials
 		driver.findElement(By.name("username")).sendKeys(empUsername);
 		driver.findElement(By.name("password")).sendKeys(empPassword);
@@ -102,6 +106,7 @@ public class AS_26 extends BaseFunction {
 
 	@BeforeClass
 	public void setup() throws InterruptedException {
+
 		launchBrowser("Chrome");
 		launchURL("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 		driver.manage().window().maximize();
