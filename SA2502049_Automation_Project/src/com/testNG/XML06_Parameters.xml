@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Agile Suite">
+	<test name="Executing With Parameters">
+
+		<parameters>
+			<parameter name="Username" value="Admin"></parameter>
+			<parameter name="Password" value="admin123"></parameter>
+		</parameters>
+		<classes>
+			<class name="com.testNG.TNG_05RandomScenarioWithTestNG">
+			</class>
+		</classes>
+
+	</test>
+</suite>
