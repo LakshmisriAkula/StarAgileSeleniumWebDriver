@@ -68,7 +68,7 @@ public class AS_28 extends BaseFunction {
 	@BeforeTest
 	public void beforeTest() throws IOException {
 		file = new File(
-				"E:\\StarAgile Webdriver\\StarAgileSeleniumWebDriver\\SA2502049_Automation_Project\\src\\ExcelFile\\loginData.xlsx");
+				"E:\\StarAgile Webdriver\\StarAgileSeleniumWebDriver\\SA2502049_Automation_Project\\src\\Excel\\loginData.xlsx");
 		fis = new FileInputStream(file);
 		wb = new XSSFWorkbook(fis);
 		sheet = wb.getSheet("LoginData");
