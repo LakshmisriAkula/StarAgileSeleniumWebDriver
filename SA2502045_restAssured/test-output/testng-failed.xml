@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="api_Methods.JsonValidation_RestAssured">
+      <class name="httpMethodsBDD.Headers_Cookies_QueryParameter">
         <methods>
-          <include name="jsonValidationTest"/>
+          <include name="cookiesTest"/>
         </methods>
-      </class> <!-- api_Methods.JsonValidation_RestAssured -->
+      </class> <!-- httpMethodsBDD.Headers_Cookies_QueryParameter -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
