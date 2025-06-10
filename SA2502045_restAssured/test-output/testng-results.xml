@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-10T12:10:31 IST" name="Default suite" finished-at="2025-06-10T12:10:33 IST" duration-ms="2262">
+  <suite started-at="2025-06-10T15:55:34 IST" name="Default suite" finished-at="2025-06-10T15:55:39 IST" duration-ms="4730">
     <groups>
     </groups>
-    <test started-at="2025-06-10T12:10:31 IST" name="Default test" finished-at="2025-06-10T12:10:33 IST" duration-ms="2262">
-      <class name="httpMethodsBDD.Headers_Cookies_QueryParameter">
-        <test-method signature="headersTest()[pri:0, instance:httpMethodsBDD.Headers_Cookies_QueryParameter@6572421]" started-at="2025-06-10T12:10:31 IST" name="headersTest" finished-at="2025-06-10T12:10:33 IST" duration-ms="2204" status="PASS">
+    <test started-at="2025-06-10T15:55:34 IST" name="Default test" finished-at="2025-06-10T15:55:39 IST" duration-ms="4730">
+      <class name="assignments.Assignment2">
+        <test-method signature="PostRequestUsingHashMap()[pri:0, instance:assignments.Assignment2@5b239d7d]" started-at="2025-06-10T15:55:34 IST" name="PostRequestUsingHashMap" finished-at="2025-06-10T15:55:39 IST" duration-ms="4639" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- headersTest -->
-      </class> <!-- httpMethodsBDD.Headers_Cookies_QueryParameter -->
+        </test-method> <!-- PostRequestUsingHashMap -->
+      </class> <!-- assignments.Assignment2 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
