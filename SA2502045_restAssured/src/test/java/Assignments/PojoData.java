@@ -1,4 +1,4 @@
-package assignments;
+package Assignments;
 
 public class PojoData {
 	private String name;

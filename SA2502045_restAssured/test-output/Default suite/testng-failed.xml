@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="assignments.Assignment2">
+      <class name="Authorization.BearerTokenAuthorization">
         <methods>
-          <include name="PostRequestUsingHashMap"/>
+          <include name="Bearer_Auth"/>
         </methods>
-      </class> <!-- assignments.Assignment2 -->
+      </class> <!-- Authorization.BearerTokenAuthorization -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
