@@ -1,4 +1,4 @@
-package assignments;
+package Assignments;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
