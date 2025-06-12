@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-11T12:55:02 IST" name="Default suite" finished-at="2025-06-11T12:55:04 IST" duration-ms="2828">
+  <suite started-at="2025-06-12T11:51:32 IST" name="Default suite" finished-at="2025-06-12T11:51:32 IST" duration-ms="356">
     <groups>
     </groups>
-    <test started-at="2025-06-11T12:55:02 IST" name="Default test" finished-at="2025-06-11T12:55:04 IST" duration-ms="2828">
-      <class name="Authorization.BearerTokenAuthorization">
-        <test-method signature="Bearer_Auth()[pri:0, instance:Authorization.BearerTokenAuthorization@7ec7ffd3]" started-at="2025-06-11T12:55:02 IST" name="Bearer_Auth" finished-at="2025-06-11T12:55:04 IST" duration-ms="2752" status="PASS">
+    <test started-at="2025-06-12T11:51:32 IST" name="Default test" finished-at="2025-06-12T11:51:32 IST" duration-ms="356">
+      <class name="httpMethodsBDD.Serialization_deSerialization_RestAssured">
+        <test-method signature="deSerializationTest()[pri:0, instance:httpMethodsBDD.Serialization_deSerialization_RestAssured@6b81ce95]" started-at="2025-06-12T11:51:32 IST" name="deSerializationTest" finished-at="2025-06-12T11:51:32 IST" duration-ms="268" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Bearer_Auth -->
-      </class> <!-- Authorization.BearerTokenAuthorization -->
+        </test-method> <!-- deSerializationTest -->
+        <test-method signature="serializationTest()[pri:0, instance:httpMethodsBDD.Serialization_deSerialization_RestAssured@6b81ce95]" started-at="2025-06-12T11:51:32 IST" name="serializationTest" finished-at="2025-06-12T11:51:32 IST" duration-ms="25" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- serializationTest -->
+      </class> <!-- httpMethodsBDD.Serialization_deSerialization_RestAssured -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

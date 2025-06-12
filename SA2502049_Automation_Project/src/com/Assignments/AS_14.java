@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.WebDriverDemos.BaseFunction;
+import com.TestBase.BaseFunction;
 
 public class AS_14 extends BaseFunction {
 

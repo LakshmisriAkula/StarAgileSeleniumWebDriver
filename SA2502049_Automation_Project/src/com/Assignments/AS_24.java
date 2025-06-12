@@ -1,7 +1,5 @@
 package com.Assignments;
 
-import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
