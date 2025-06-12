@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name = "Agile Suite">
+	<test name = "Amazon Single Method Test">
+		<classes>
+			<class name = "com.testNG.TNG_08_GetScreenshot_SkipFunction_Assertions">
+				<methods>
+					<include name = "testSellLink"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

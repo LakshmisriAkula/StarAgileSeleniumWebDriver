@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Agile Suite">
+	<test name="Executing Groups">
+		<groups>
+			<run>
+				<include name="Sell"></include>
+				<!-- <exclude name="Sell"></exclude> -->
+			</run>
+		</groups>
+		<classes>
+			<class name="com.testNG.TNG_09_Amazon_GroupsExecutionScript">
+			</class>
+
+		</classes>
+	</test>
+</suite>

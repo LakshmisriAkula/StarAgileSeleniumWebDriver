@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-import com.Locators.BaseFunction;
+import com.TestBase.BaseFunction;
 
 public class SA_19HandlingDropdown extends BaseFunction {
 

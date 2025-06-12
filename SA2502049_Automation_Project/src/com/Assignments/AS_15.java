@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 
-import com.WebDriverDemos.BaseFunction;
+import com.TestBase.BaseFunction;
 
 public class AS_15 extends BaseFunction {
 

@@ -3,7 +3,7 @@ package com.Checkboxes;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import com.Locators.BaseFunction;
+import com.TestBase.BaseFunction;
 
 public class SA_18HandleCheckboxs extends BaseFunction {
 

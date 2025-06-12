@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Agile Suite]">
+  <test thread-count="5" name="Executing With Parameters(failed)">
+    <parameter name="Username" value="Admin"/>
+    <parameter name="Password" value="admin123"/>
+    <classes>
+      <class name="com.testNG.TNG_05RandomScenarioWithTestNG">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="beforeTest"/>
+          <include name="exitDriver"/>
+          <include name="loginHRM2"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- com.testNG.TNG_05RandomScenarioWithTestNG -->
+    </classes>
+  </test> <!-- Executing With Parameters(failed) -->
+</suite> <!-- Failed suite [Agile Suite] -->

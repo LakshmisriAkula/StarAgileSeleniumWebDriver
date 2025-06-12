@@ -1,21 +1,24 @@
 package Authorization;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
 
 public class Basic_Authentication {
 
-	@Test
-	public void Base_Authentication() {
-		String base_Auth_Req = "https://postman-echo.com/basic-auth";
+	String username = "postman";
+	String password = "password";
 
-		Response res = given().auth().basic("postman","password").when().get(base_Auth_Req);
-		
-		res.then().body("authenticated", equalTo(true)).log().body();
+	@Test
+	public void baseAuthenticationtest() {
+		Response res = given().auth().basic(username, password).when().get("https://postman-echo.com/basic-auth");
+
+		res.then().log().body();
+		boolean status = res.jsonPath().getBoolean("authenticated");
+		Assert.assertEquals(status, true);
 
 	}
 
