@@ -1,0 +1,949 @@
+Selenium WebDriver Module no. 3
+
+1. Content
+		Concept of Automation
+		Component of Selenium Webdriver
+		Configuration of Selenium WebDriver.
+		Methods of WebDriver
+		  1. get() 
+		  2. getCurrentURL()
+		  3. SendKeysMethod
+		  4. Click();
+        Locators in WebDriver - 
+        		- Name
+        		- ID
+        		- ClassName
+        		- Xpath
+        		- Css Selectors
+        		- tagName
+        		- Linktext
+        		- partial Link
+        		- Relative Locator.
+        Handling the Control
+         - Button
+         - text/Box
+         - HyperLink
+         - Radio Button
+         - Checkbox
+         - DropDown List
+         - File Upload
+         - Tables - excel file row|column | webtables -row and column
+
+         Synchronization in WebDriver
+ 		 - Thread.sleep()
+ 		 - Implicit Wait
+ 		 - Explicit wait
+ 		 - FluentWait
+ 		 - PageLoadTimeout
+
+ 		 Handling Alerts
+ 		 Handling MultipleWindows
+ 		 Handling Popups
+ 		 Mouse Actions
+ 		 	- Click
+ 		 	- Right Click
+ 		 	- Drag n drop
+ 		 	- Mouse Hover
+ 		 JavaScript Executor
+ 		    - Click
+ 		    - scroll
+ 		 Screenshot
+ 		 testNG (unit testing framework)
+ 		 	Configuration
+ 		 	Execute single testcase
+ 		 	Multiple tescase
+ 		 	Setting priority
+ 		 	generate the report
+ 		 	Beforetest,AfterTest, BeforeMethod, AfterMethod
+ 		 	DataProvider
+ 		 	KeyWordDriver Framework
+ 		 	Page Object Model Framework
+ 		 	DataDriver Framework 
+ 		 	Cucumber Approach.
+ 		 Introduction to Maven
+ 		 	- How to Create project
+ 		 	- Adding dependencies - libraries.
+ 		 	- Execution
+ 		 	- extent report
+
+
+
+ 		Java revision Points.
+ 			- Java Basics
+ 			   - Vairables
+ 			   - Loops/ Condition if else
+ 			    - loops
+                   - for loop
+                   - enhanced loop (for each loop)
+                   - nested loop.
+                Arrays
+                Methods/Functions
+                Type Casting.
+                Creating class and objects
+                	Constructor
+                	Static variables and methods
+                	calling method with objects
+                Ops -concepts
+                Exception Handling
+                 - throws keyword.	
+                Collections
+                  List (*)
+                  Set
+                  Map 
+
+
+      What is Software testing?
+      Software testing is a process of identifying correctness, completeness, security and quality of developed software (CCSQ)
+
+      Software testing is a process to verifiying and validate the application in order to identify defects. 
+      difference b/w expected and actual result.
+
+
+      1. Scenario Creation.
+      2. Test planning - senior people.
+      3. testcase creation
+      4. TestData Creation
+      5. RTM - 
+      6. Execution.
+
+      	to Create a GMail account manually
+      	1. Open the browser
+      	2. enter the Application URL
+      	3. Entering the data - 
+      	4. Selecting the data from dropdown
+      	5. Click/enter - Links/button
+      	6. Selecting/Clicking the checkbox/radio button
+      	7. Observe the result
+      	8. compare expect with actual result
+      	9. mark the tc's fail/pass.
+
+
+      	Automation Testing- 
+      	Automation testing is the process via which we can perfrom all above actions via a machine/an automation tools.
+
+      	Every Automation tools is software.
+
+      	Instructions neeed to be provided into a specific programming langugage
+      	(Java, python, ruby, perl, PHP etc.)
+
+      	Advantages of Automation testing.
+      	1. Faster
+      	2. time Saving
+      	3. Cost | home work for guys.
+      	4. Less Human efforts.
+      	5. Accuracy
+      	6. Reusability
+      	7. Automation report.
+      	8. More Efficiency.
+      	9. Improve a Quality.
+      	10. More test coverage. - cross browser testing| devices.
+      	11. Early bug finding
+      	12. Boost the product| productivity.
+
+
+      	When to Automate
+      	1. Stable requirement/functionality.
+      	2. regression/Smoke/sanity Testing.
+      	3. Repeated Scenario's  - to check the all/each links working on page | login scenario/   
+      	   checkout | social login | 
+        4. security testing
+        5. accessiblity testing
+        6. compatbility testing.
+        7. performance testing.
+
+
+        Process of Automation?
+        1. Planning
+        2. Tool Selection.
+        3. testscripts 
+        4. test data creation.
+        5. report generation.
+
+
+
+
+ Selenium -   is an open source project 
+              is has very strong coomunity.
+              is set or bundle of test automation tools.
+
+   Components of Selenium.
+  1. Selenium IDE - (Record and playback mechanism).
+  2. Selenium Grid - (parallel execution | cross browser testing)
+  3. Selenium RC - Remote control. (Deprecated)
+  4. Selenium WebDriver. 4.28.0
+
+  Selenium WebDriver
+  1. Automation testing tool for testing WebBased(browser/websites) Application
+  2. WebDriver is an Interface.
+  3. is an API.
+  4. Selenium Webdriver method - API's which is build using Rest technology.
+
+
+  1. How Selenium Webdriver works
+    test scripts execution - we  write a test scripts using a selenium client libraries (Java,Python, etc) in you choosen programming langugage.
+
+  2. Command translation : The Client library translates your test commands into a JSON format as 
+                          webdriver protocol (W3c/Json Wired)
+
+  3.HTTPS Communication: These JSON Commands are sent over HTTP to the appropriate browser driver (   
+                          cD,FD, ED)
+
+  4.Driver- Browser Interaction : The browser driver recevies the commands and interacts with the
+                     browser to perform the specified actions(eg. click on button, launch url).
+
+  5. Response Handling: The browsers response is sent back through the driver to the client library,
+                   which then proceeds with the next steps in the test scripts.
+
+
+
+      Pre-Requisite for Selenium WebDriver
+
+      1. Minimum Window 10 - Operating system.
+      2. Any latest browser with updated version.
+      3. minimum java version 11 (for checking java version in cmd - java -version | java --version)
+      4. windows laptop = window key + R  - cmd then hit enter -- this will commant prompt.
+      5. Any java Editor - Eclipse or intellij
+      6. A selenium Jar.
+
+
+      Configuration of Selenium Webdriver.
+        1. Create 2 seperate Folders
+            a. YourName_SeleniumWorkspace
+            b. Selenium Jars Files.
+        2. Open selenium.dev websites
+        3. Click on Download Links
+        4. Cut paste the dowloaded file in the 2nd folder (Selenium jar files)
+        5. Launch Eclipse.
+        6. Select the 1st Folder (Which we have created in 1st Step) as your workspace.
+        7. Click on Launch.
+        8. Now create a new project
+            a. File -> New java Project
+            b. Give a name to Project
+            c. Uncheck Create Module-info.java checkbox
+            d. click on finish
+
+
+
+
+        Methods of WebDrivers
+        1. Launch the browser : Create an object of webdriver interface, browser sepcific class   
+                                object
+        2. Get(): use to open any websites over browser.
+        3. close(): close the browser window
+        4. driver().manager().window().maixmize() : maximized the browser window.
+        5. getTitle(): which returns the title of webPage (String)
+        6. getCurrentUrl(): Returns the URL of current page. (String)
+        7. findElement(): Reads the control on the web page. Locates for the first occurrence on  
+                          the web page. (WebElement)
+        8. findElements(): Reads multiple elements on the webpage(List<WebElement>)                  
+
+
+        Common Exception in Selenium Automation.
+        1. InvalidArgumentException :   Your URL is in wrong syntax (The URL should be absolutemeans it should starts with http:///https://)
+        2. NoSuchElementException: Selenium is unable to locate the element over page.
+            what are the possible reasons
+            1. The value of locator that might be wrong.
+            2. Value of locator may be dynamic in nature.
+            3. Synchronization issue.
+        3. InvalidSelectorException: The value of locator is in wrong format. 
+        4. TiimeOutException: the specified URl is not loading within 30 seconds.   
+
+
+        WebElement
+          • Every control on the web page is treated as WebElement in Selenium.
+          • WebElement is an interface.
+          • WebElement can hold any control on the web page.
+
+		Method of WebElement Interface.
+		1.	sendKeys(): Used to enter some text in the text box.
+		2.	click(): Used to click on the control.
+		3.	getText(): Returns the text on the control. (String)
+		4.	isSelected() : Used to check whether the checkbox or radio button is selected or not. (boolean)
+		5.	isEnabled() : Used to check whether the control is enabled or disabled. (boolean).
+		6.	isDisplayed() : Used to check whether the control is visible or not. (boolean)
+		
+
+        Locators* - 
+          
+          Locators is medium through which selenium can reach to the element over page.
+
+          1. Name
+          2. Id
+          3. className
+          4. CssSelector
+          5. Xpath
+          6. PartialLink
+          7. Linktext
+          8. Relative
+          9. TagName
+
+		Css Selector -> This is an locators which use to identify element over web page by 1 or mulitple format.
+		Types. Single Attributes 
+				1. tagname[attribute="value"] --> input[type="text"]
+				
+				Mulitple Attributes
+				1. tagname[attribute="value"][attribute="value"] --> 
+						input[type="text"][class="form-control"]
+						input[type="text"][placeholder="Username"]
+						
+				2. 	^  --> starts with (initial part of locator is stable and rest is dynamic)
+				    $  --> Ends with (ending part of locator is stable and inital- starting is dynamic)
+				    * --> Contains  [class*='inputtext']
+				    . --> class  --> .inputtext._55r1._6luy 
+				    # --> id -- #email
+					
+				
+				xxxxxxx231231312
+				123213123123xxxxxxx
+				2312312312xxxxxx2132131
+				
+				
+				.inputtext._55r1._6luy._9npi
+				input[class='inputtext']
+				
+				
+				class="inputtext _55r1 _6luy
+				
+				
+		World -> Contentient > Country > State > city > local area > address
+		World -> Asia > India > Maharashtra > Pune > Kharadi > Near IT park > building > floor > flatno.
+		
+		World > Asia > India > Maharashtra > Pune > Kharadi > 
+		World > Asia > India > Maharashtra > Mumbai > west >
+		
+			
+			Xpath - XML path  - every element over webpage having an address.
+			1. Complete Xpath
+			2. relative Xpath  - //tagname[@attribute="value"] - //input[@id='username']
+								//*[@attribute="value"]
+								//tagname[@attribute="value"]/tag/tag
+			
+			this is an complete xpath which starts from the root tag or level in html page
+			
+			Username - html/body/...//div/main/div[2]/div/form/div/input
+			password - html/body/div/main/div[2]/div/..//form/div[2]/input	
+			
+			
+			/html/body/div/main/div[2]/div[1]/form/div[1]/input
+			//*[@id="username"]		
+		
+		Handling Dropdown
+	1.	If the element is having select tagname then only selenium would treated as dropdown
+	2. For handling this type dropdown list selenium having speical class called select class.
+	
+	
+	Methods
+	1. getFirstSelectedOption(): Returns the selected option from the dropdown list (WebElement)
+	2. selectByIndex();
+	3. selectByVisibleText()
+	4. selectByValue();
+
+
+
+		
+		Synchronization (Waits in Selenium)
+
+Synchronization is the process of adjusting the speed of tool with speed of the application.
+
+
+	1. Thread.sleep()
+		a. pauses the execution for given time period.
+		b. it is application for single statement only.
+		c. Mandatory part in this , it takes mandatory delay
+	2.Implicit wait	
+		a. it doesn't takes mandatory delay
+		b. it works throughout the scripts(driver.findElement() and driver.findElements())
+	3. Explicit Wait(WebDriver Wait)
+		a. it doesn't takes mandatory delay
+		b. its is application for single statement only
+		c. can use for condition wait (isalertpresent, isselected, isDisplayed etc.)
+	4. fluentWait.	
+	5. PageLoadTimeout: 
+	     a. Used to avoid timeOutException which is caused due to page not loaded in given time period.
+	
+	
+	
+	
+	.dataTable th   -6 
+	//table[@class='dataTable']/thead/tr/th -6
+	//table[@class='dataTable']//th   -- 6 
+	
+	//table[@class='dataTable']/tbody/tr/td/a   -- return each link present in tr/td
+	
+	//table[@class='dataTable']/tbody/tr[1]/td[1]/a  -- this would return test link of first column of first row.
+	
+	tr -- rows of the table
+	td - column of the table.
+		
+		
+		//table[@class='dataTable']/tbody/tr[1]/td[1]/a  - text from 1 row 1 column 
+		
+		//table[@class='dataTable']/tbody/tr[2]/td[1]/a
+		
+		
+		//table[@class='dataTable']/tbody/tr[2]/td[1]/a  
+		
+		//table[@class='dataTable']/tbody/tr[3]/td[1]/a
+		//table[@class='dataTable']/tbody/tr[4]/td[1]/a
+		
+		//table[@class='dataTable']/tbody/tr[5]/td[1]/a 
+
+
+				if i want to print text from 1column of each row	
+				
+				//table[@class='dataTable']/tbody/tr  - no of row present in table.	
+		
+		
+		Cricbuzz xpath's
+		 getting number of rows -->1.		//*[@id="innings_1"]/div[1]/div   -- 15
+		 getting number of column -->       //*[@id="innings_1"]/div[1]/div[3]/div  - 8 
+		
+		
+		
+		
+
+	1.		//*[@id="innings_1"]/div[1]/div[3]/div[1]/a
+	        //*[@id="innings_1"]/div[1]/div[4]/div[1]/a
+
+
+
+          //*[@id="innings_1"]/div[1]/div[3]/div[2]/span
+          //*[@id="innings_1"]/div[1]/div[3]/div[3]
+          //*[@id="innings_1"]/div[1]/div[3]/div[4]
+          //*[@id="innings_1"]/div[1]/div[3]/div[7]
+          
+          
+          
+          //*[@id="innings_1"]/div[1]/div[4]/div[1]/a
+          //*[@id="innings_1"]/div[1]/div[4]/div[2]
+
+
+	Alert is an interface in selenium webdriver(consider special class)
+	1. Alert can handle from browser itself
+	2. until handle alert user block to access rest of website
+	3. type of alert 
+		normal alert , prompt alert, confirmation alert
+		1.what is normal alert - where user need to accept the alert only. by click on ok button
+		2.prompt alert -> user have enter or supply some input in form of text and provide confirmation by clicking 
+		 				ok or cancel button
+		3.Confirmation alert - user needs to provide their intreset in form of consent by click on ok or cancel button.
+
+	1 how to automate alert : selenium webdriver we have special class called alert (interface)
+					  alert interface having function accept() and dismiss()
+					 for ok --> accept()
+					 for cancel ---> dismiss() 
+					 alert support sendkeys function to enter input
+					 
+					 
+		--> browser --> application --> inspect element ---> click --. alert appears.	
+			driver object
+			user need to switch from driver to alert	
+			driver.switchto.alert()	 
+						
+						
+						
+1. Action class in Selenium WebDriver.
+	a. Mouse Hover.
+	b. Right Click
+	c. Left Click
+	d. Drag and Drop
+	e. Double Click.						
+
+
+	TestNG(Next Generation) - Apache Foundation its an open source/Free to use.
+	One of the most popular unit testing framework.
+	
+	1. Advantages
+	 a. Makes Automation test execution easier.
+	 b. You can group or collection of multiple tc's
+	 c. set priority of testcases - 
+	     login - class --> testA, testB, testC 
+	 d. Uses Annotations.
+	 	a. @Test  - stands for testcases.
+	 	b  @BeforeTest -- if wanna execute something before my test executes 
+	 	c. @AfterTest
+	 	d. @BeforeMethod
+	 	d. @AfterMethod
+	 	e. @DataProvider
+	 	f. @BeforeClass
+	 	g. @AfterClass.
+	 e. Allows to generate testexecution reports.
+	    a. normal report
+	    b. html report - extent reports.
+	 f.  multiple testcase in single go on single browser 
+	     single testcases on multiple browser   
+	 g. allow users to reuse the script of selenium.    
+	      	   
+	      	   
+	      	   
+		What is parameterization?	
+		Execute single or same or stable feature/functionality multiple time with different or same set of data.    
+	
+		automation objective is 
+		writes once and run many times  	   
+		
+		
+		login - 1000
+		Open browser
+		open URL
+		Enter Username
+		Password
+		Click on submit
+		Logout
+		
+		loop -- 1000
+		 would run for single set of testData.
+		Open browser
+		open URL
+		Enter Username
+		Password
+		Click on submit
+		Logout
+	      	   
+	      	   end to end - placing order scenario for 10 times
+	      	   
+	      	   
+	      	   
+	      	   
+	    
+	    
+	    Selenium | WebDriver Module
+	    
+	    1. We have started with Selenium webdriver.  	
+	       a. learn methods to automate websites.
+	       b. testNG - we are learning test execution | management
+	           1. anotations 
+	           2. Assertions
+	           3. better executions.
+	           4. read data from external sources.
+	       c. Create framework.
+	          
+	    
+	    
+	    1. ScreenShot
+	    2. Assertions
+	    3. Better Execution - XML.
+	    4. Scroll method.      
+	      	   
+	      	   
+	
+	
+	
+	Driver.close
+	
+	1 open chrome browser
+	2. launch amazon
+	3. driver.close
+	       	   
+	       	   
+	       	   
+	       	   open chrome browser
+	       	   launch amazon
+	       	   click on sell link
+	       	   new tab 
+	       	   switchmy control to new tab
+	       	   get the title of the page
+	       	   driver.close()  |  closes the current active browser window/tab.
+	       	   
+	       	   driver.quit() |  Closes all browser window/tab opened during single session.
+	       	   and release webdriver object | ends the webdriver session entirely.
+	       	   
+	       	   
+Assertions in TestNG
+
+ what is assertion | which help to validate a conditions and check values of two object, variables whether equal or not.	       	   
+	
+	two type of assertions
+	 1. hard Assertion  - check the condition and values, if condition and values are not match stop the execution. 
+	 2. soft assertions - check the condition and values, if condition and values are not match it will throw 
+	                      exception and continue with execution  
+	                      
+	     Hard assertion | checking element existence | payment page | checkoutpage
+	     SoftAssertion | checking page title| company logo, check text (which consider a cosmetics defects.)     
+	     
+	     1. assertTrue  -- check the conditions   ==
+	     2. assertEquals -- check the values are equal or not.     string.equals   
+	     
+	     
+	     
+	     
+	     
+	     for skipping the test in testng use enabled method and set value to false.        	   
+
+
+
+Cron jobs  - 30 4 * * *   - 4:30 in morning 
+		     30 16 * * *  - 4:30 in evening
+		     30 16 * * * -   4:30 in evening on every monday
+		     
+		     
+		     
+		     What is testsuite
+		      collection of multiple testcase - manual
+		      collection of multiple testscripts - automation.
+		      
+		      
+		      
+		      With testng.xml 
+		      	- single execution
+		      	- multiple execution
+		      	- execution from class -- all testcases.
+		      	- skip testcases - enabled - true. - means skip | false mean execute.
+		      	- parallel execution 
+		      	 		5 
+		      	- Smoke, Sanity, Regression, UAT 	| grouping	
+					5,   12,    40,     20
+					
+				- Amazon | Register |	Login  |
+				
+				
+				
+				
+				
+				
+				
+	1. How many types we have in automation (selenium through which we can reads the data)
+	
+		What is parameterization 
+		1.  execute single testcases with multiple sets of data.
+		2.  check the stable functionality or web application.		
+		
+		
+		1. properties. 
+		2. xlsx file - excel file.
+		3. xml file.
+		
+		
+		How many type of frameworks?
+		1. Keyword driven
+		2. DataDriven
+		3. Moduler
+		4. Hybrid
+		5. BDD
+		6. Page Object Model	
+
+
+1. how to work with properties files;
+
+	1. Create object of	File -class and supply the file path to that class.
+	2. Whenever we are reading data from external --- java will read the data in-form of streams.
+		stream is channel where data flows  
+	3. Create object of fileInputStream
+	4. Create object of properties class.
+
+
+
+
+ DataDriven Scenario with ExcelFile
+ testscripts driven by testData
+ 
+ 1. reading the data from excel file to execution functionality/ testcases
+ 2. to Open multiple URL's and validate the title of page., then write the URL and title into excel files.
+ 3. get the data from webTable -cricket score match., write same data into excel file.
+ 
+ 
+ 1.  Reading the data from excel  -  FileInputStream | when you are reading data
+ 2.  Writing data into excel file -  FileOutputStream | When to write a data in file.
+ 
+ 
+ 		1. Create an object of File
+ 		2. Create an object of FileInputStream/OutPutStream.
+ 		3. Create an object of workbook
+ 		4. Create a reference of Sheet
+ 		5. Create a reference of Rows
+ 		6. Create a reference of column | cell
+ 		
+ 		
+ 		Workbook --> Sheet --> Rows --- cell
+ 		
+ 		
+ 		File --> FileInputStream --> Workbook --> Sheet --> Rows --- cell
+ 		
+ 		File --> FileOutPutStream --> Workbook --> Sheet --> Rows --- cell
+ 		
+ 		
+ 		
+ 		
+ 		type of excel file extension.
+ 		
+ 		.xls  excel file version from 97-2003
+ 		.xlsx after MS office 2007 
+ 		
+ 		.xls HSSFWorkbook  | outdated.
+ 		.xlsx XSSFWorkbook  | going on.
+ 		
+ 		
+ 		Configure POI int selenium project
+ 		1. goto POI library folder
+ 		2. select 8 jar files.
+ 		3. goto --> lib - select 6 files
+ 		4. goto --> 00xml-lib --> 7 files  == 21 files need to configured.
+ 		
+ 		
+====================================================================================================================== 		
+ 		
+ 	Maven:
+ 	1. Maven is product of Apache company
+ 	2. Maven is buil management tool
+ 	3. Can use both developer and tester.
+ 	4. Maven user centralized repository to keep the project version.
+ 	
+	Benefits
+	1. Configuration is way easy with maven project.	
+	2. Dependencies  | Library
+	   Selenium | testng | POI |Extend report
+	3. POM.xml - very case sensitive.
+	4.Project version control makes very easier with maven.   
+	
+	
+	
+	Builds
+	want to develop an application like whatsapp.
+	Chats
+	audio call
+	video call
+	Status
+	ProfilePic
+	
+	chats feature -- -release version_1.0   -- first build 
+	Audio call ---- release version 2.0 --- seconds build
+	
+	
+	Steps to create maven project
+	1. File -> New -> Maven project
+	2. Select the first checkbox
+    3.Click on next button
+    4. enter group id and Artifact ID
+         groupID(Package Name)
+         ArtifactID (Project Name)
+    5. click on Finish button
+
+
+		Maven Project
+			src / main /java
+			           / resources
+			
+			src/ test / java
+			         / resources
+			         
+			         
+			         
+       all testing resources (creating testcases and testData will keep inside) src/ test/ java location.
+       all functions and there resources -- src /main / java 
+       
+       
+       	Testcases - src/test/java  -->  Login1 
+       		Excel - src/ test/ resources - credentails.xlsx
+	
+	
+	BDD - Behavioral Driven Development
+	
+	What is requirement? Expected result / outcome.
+	
+	requirements (BRS/TRS) will be shared with QA Team.
+	1. QA Team , create a testing scenario's form documents.(Usecases)
+	 Login scenario 
+	 	 check scenario 
+	 	 Username -  V  |  IV  | IV  |  V
+	 	 Password -  V  |  IV  | V   | IV
+	 	 submit
+	 	 
+	 	 Create a testcases -- Manual testing
+	 	 
+	 	 BDD - 
+	 	 Features  - File , which contains no. of test scenario's (create by QA team.)
+	 	 Then this feature file will be shared with
+	 	 1. Developer - so that they can create an application
+	 	 2. Manual Tester - so that create manual testcases
+	 	 3. Automation tester - so can create an automation scripts.
+	 	 
+	 	 this will be the 1st component of BDD.
+	 	 
+	 	 
+	 	 Now Automation roles in BDD.
+	 	 will create an automation scripts Glue Code/Step definitions (second component of BDD)
+	 	 
+	 	 For execution of automation scripts we need an executor. Runner file. (third component of BDD)
+	 	 
+	 	 1. Features File --> Step Definition/Gluecode ----> Runnner Files.
+	 	 	
+	 	 	In order to right scenario in feature file we use Gherkin Langugage (Plain simple english)
+	 	 	Cucumber is library
+	 	 	Cucumber is used to implement BDD framework.
+	 	 	
+	 	 	
+	 Creating a cucumber Project.
+	 1. File --> New -- Maven Project
+	 2. Select 3rd checkbox --> next
+	 3. type "io.cucumber" as filter --> next
+	 4. Enter archtypeID and groupID --> finish
+	 
+	 5. Select <Properties>(Line no. 12) to </depedencies> (line no.66)
+	 6 . Paste below  code in pom.xml
+	 		<properties>
+				<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+				 <java.version>11</java.version>
+				<junit.version>4.13.1</junit.version>
+				<cucumber.version>6.8.2</cucumber.version>
+				<cucumber.version>6.9.0</cucumber.version>
+			</properties>
+		<dependencies>
+			<!--  https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java  -->
+			<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>4.28.1</version>
+			</dependency>
+			<dependency>	
+			<groupId>io.cucumber</groupId>
+<artifactId>cucumber-java</artifactId>
+<version>${cucumber.version}</version>
+<scope>test</scope>
+</dependency>
+<dependency>
+<groupId>io.cucumber</groupId>
+<artifactId>cucumber-junit</artifactId>
+<version>${cucumber.version}</version>
+<scope>test</scope>
+</dependency>
+<dependency>
+<groupId>junit</groupId>
+<artifactId>junit</artifactId>
+<version>${junit.version}</version>
+<scope>test</scope>
+</dependency>
+</dependencies>
+
+
+	7. go to eclipse marketplace from help menu.
+	8. need to download plugins called -- cucumber
+	   1. search cucumber --> click on install button under cucumber eclipse plugin
+	   
+	   
+	   
+	   Feature File
+	    1. Collection of test scenario's
+	    2. Created a scenario/ testcases by using gherking langugage.
+	    3. extension of feature file --.feature
+	    4. Contains Keywords. 
+	         Feature:    -- represents requirements 
+	         Feature: This feature file would hold test scenario of login page.
+	         
+	         Scenario: - Test objective.
+	         Given - pre-condition / pre-steps
+	         When - Steps
+	         And/But - combine multiple steps
+	         Then - to check excepted condition.
+	         Background - For Multiple Given steps.
+	         Examples: Data Driven testing(Used to pass the data to step definition)
+	         Scenario Outline: Used in data driven testing.
+	         
+	         
+	         
+	   To validate title of google page.   
+	   		1. Open Google
+	   		2. Read Title
+	   		3. Validate title.  
+	   		
+	   		
+	   		
+	   		Feature:  This feature file would hold test scenario of login page.
+	   		
+	   		
+	   		BackGround:
+	   		Given The user launch browser
+	   		Given The user launch application URL
+	   		
+	   		Scenario: To validate title of google page
+	   		When The user gets title of google page
+	   		Then The use validates title of google page.
+	   		
+	   		
+	   		Scenario: To validate search feature of google.
+	   		When The user search the data
+	   		Then  The user validates searched data
+	   		
+	   		
+	   		
+	   		Steps Definition.
+	   		1. It is a normal java class
+	   		2.Using cucumber annotations
+	   		3. Contains automation scripts.
+	   		
+	   		
+	   		Runner File (Executor)
+	   		1. Normal Java Class
+	   		2. Using Junit Annotations
+	   		3. Purpose to execute the automation scripts is covers test steps.
+	   		
+	   		Java -- this is cucumber runner.
+	   		1. @RunWith(Cucumber.class)
+	   		2. @CucumberOptions(feature path, step definition path.)
+	   		
+	   		
+	   		Tags In Cucumber
+	   		1. Tags is used to run/execute the test cases
+	   		    a. run single testcases
+	   		    b. skip the testcases
+	   		    c. multiple testcases.
+	   		2. Tags defined in feature file only.
+	   		3. @ - special character. @smoke, @regression @Checkout
+	   		4. tag conditions defined in runner class.   
+	   		
+	   		
+	   		
+	   if i need to execute any code prior or after each scenario in cucumber.
+	   
+	   
+	   Hooks In Cucumber (Very important interview question.)
+	   1. the code get executed before and after each scenario
+	   2. @Before
+	   3. @AFter
+	
+	 
+	 	Scrollby -- you scrolling tha page from one position to another position.
+	 	
+	 	1. Scroll from top to bottom or scroll entrie page within view point of browser
+	 	2. need to scroll based on co-ordinates 
+	 	3. need to scroll in to view
+	 	
+	 	JavascriptExecutor interface
+	 	 	
+	 	 	
+	 	 	
+	 	 	Page Object Model with out page factory.
+	 	 	1. With pagefactory we have to use pagefactory function (keeping page functions and its location at same class)
+	 	 	2. without pagefactory - keep function and loctors of page at same location without using pagefactory function.
+	 	 	
+	 	 
+	 	 
+	 	 cucumber
+	 	  Feature file --> StepsDefinition -- runner  -- 
+	 	  Page object model approach
+	 	  
+	 	  Login -- loginPage.java
+	 	  registeration -- registerationPage.java
+	 	  Checkout --- Checkoutpage.java
+	 	  PLP -- PLPage.java
+	 	  
+	 	  
+	 	  
+	 	  starts-with
+	 	  contains
+	 	  normalize-space()
+	 	 
+	 	
+	 	 
+	
+	
+ 
+ 		
+ 		
+ 		
+ 		
+ 
+ 
+ 
+ 
+ 
+ 
